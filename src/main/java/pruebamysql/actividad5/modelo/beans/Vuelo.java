@@ -8,13 +8,15 @@ public class Vuelo {
     private String ciudadDestino;
     private LocalDateTime fechaYHoraLlegada;
     private LocalDateTime fechaYHoraSalida;
+    private int numeroPlazaslibres;
 
-    public Vuelo(long codigoVuelo, String ciudadOrigen, String ciudadDestino, LocalDateTime fechaYHoraLlegada, LocalDateTime fechaYHoraSalida) {
+    public Vuelo(long codigoVuelo, String ciudadOrigen, String ciudadDestino, LocalDateTime fechaYHoraLlegada, LocalDateTime fechaYHoraSalida, int numeroPlazaslibres) {
         this.codigoVuelo = codigoVuelo;
         this.ciudadOrigen = ciudadOrigen;
         this.ciudadDestino = ciudadDestino;
         this.fechaYHoraLlegada = fechaYHoraLlegada;
         this.fechaYHoraSalida = fechaYHoraSalida;
+        this.numeroPlazaslibres = numeroPlazaslibres;
     }
 
     public long getCodigoVuelo() {
@@ -55,5 +57,13 @@ public class Vuelo {
 
     public void setFechaYHoraSalida(LocalDateTime fechaYHoraSalida) {
         this.fechaYHoraSalida = fechaYHoraSalida;
+    }
+
+    public int getNumeroPlazaslibres() {
+        return numeroPlazaslibres;
+    }
+
+    public void setNumeroPlazaslibres(int numeroPlazaslibres) {
+        this.numeroPlazaslibres = numeroPlazaslibres;
     }
 }
