@@ -3,14 +3,14 @@ package pruebamysql.actividad5.modelo.beans;
 import java.time.LocalDateTime;
 
 public class Vuelo {
-    private long codigoVuelo;
+    private String codigoVuelo;
     private String ciudadOrigen;
     private String ciudadDestino;
     private LocalDateTime fechaYHoraLlegada;
     private LocalDateTime fechaYHoraSalida;
     private int numeroPlazaslibres;
 
-    public Vuelo(long codigoVuelo, String ciudadOrigen, String ciudadDestino, LocalDateTime fechaYHoraLlegada, LocalDateTime fechaYHoraSalida, int numeroPlazaslibres) {
+    public Vuelo(String codigoVuelo, String ciudadOrigen, String ciudadDestino, LocalDateTime fechaYHoraLlegada, LocalDateTime fechaYHoraSalida, int numeroPlazaslibres) {
         this.codigoVuelo = codigoVuelo;
         this.ciudadOrigen = ciudadOrigen;
         this.ciudadDestino = ciudadDestino;
@@ -19,11 +19,11 @@ public class Vuelo {
         this.numeroPlazaslibres = numeroPlazaslibres;
     }
 
-    public long getCodigoVuelo() {
+    public String getCodigoVuelo() {
         return codigoVuelo;
     }
 
-    public void setCodigoVuelo(long codigoVuelo) {
+    public void setCodigoVuelo(String codigoVuelo) {
         this.codigoVuelo = codigoVuelo;
     }
 
