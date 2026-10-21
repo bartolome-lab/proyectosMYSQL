@@ -59,7 +59,7 @@ public class Vuelo {
         this.fechaYHoraSalida = fechaYHoraSalida;
     }
 
-    public int getNumeroPlazaslibres() {
+    public int getNumeroPlazasLibres() {
         return numeroPlazaslibres;
     }
 
