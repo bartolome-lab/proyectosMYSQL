@@ -19,6 +19,9 @@ public class Vuelo {
         this.numeroPlazasLibres = numeroPlazasLibres;
     }
 
+    public Vuelo(Vuelo vuelo) {
+    }
+
     public String getCodigoVuelo() {
         return codigoVuelo;
     }
@@ -65,5 +68,15 @@ public class Vuelo {
 
     public void setNumeroPlazasLibres(int numeroPlazasLibres) {
         this.numeroPlazasLibres = numeroPlazasLibres;
+    }
+
+    @Override
+    public String toString() {
+        return "Código de vuelo: " + codigoVuelo
+                + ", ciudad de origen: " + ciudadOrigen
+                + ", ciudad de destino: " + ciudadDestino
+                + ", fecha y hora de salida: " + fechaYHoraSalida
+                + ", fecha y hora de llegada: " + fechaYHoraLlegada
+                + ", número de plazas libres: " + numeroPlazasLibres;
     }
 }
