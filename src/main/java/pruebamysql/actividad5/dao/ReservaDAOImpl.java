@@ -1,11 +1,6 @@
-package pruebamysql.actividad5.modelo.dao;
+package pruebamysql.actividad5.dao;
 
-import pruebamysql.actividad5.modelo.procesos.ConexionBD;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class ReservaDAOImpl implements ReservaDAO{
 
@@ -23,6 +18,10 @@ public class ReservaDAOImpl implements ReservaDAO{
         INSERT INTO reserva (codigoCliente,codigoVuelo) VALUES(?,?)
         """;
 
+    private static final String EXISTE = """
+            SELECT * FROM reserva WHERE codigoCliente = ? AND codigoVuelo = ?
+            """;
+
     @Override
     public void insertar(long codigoCliente, String codigoVuelo) throws SQLException {
         try (Connection conexion = ConexionBD.obtenerConexion();
@@ -38,6 +37,18 @@ public class ReservaDAOImpl implements ReservaDAO{
         try (Connection conexion = ConexionBD.obtenerConexion();
              Statement statement = conexion.createStatement()) {
             statement.execute(CREAR_TABLA);
+        }
+    }
+
+    @Override
+    public boolean existe(long codigoCliente, String codigoVuelo) throws SQLException {
+        try (Connection conexion = ConexionBD.obtenerConexion();
+             PreparedStatement ps = conexion.prepareStatement(EXISTE)) {
+            ps.setLong(1, codigoCliente);
+            ps.setString(2, codigoVuelo);
+            try (ResultSet rs = ps.executeQuery()) {
+                return rs.next();
+            }
         }
     }
 }

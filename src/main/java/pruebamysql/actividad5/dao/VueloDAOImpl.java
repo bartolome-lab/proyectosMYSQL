@@ -1,7 +1,6 @@
-package pruebamysql.actividad5.modelo.dao;
+package pruebamysql.actividad5.dao;
 
 import pruebamysql.actividad5.modelo.beans.Vuelo;
-import pruebamysql.actividad5.modelo.procesos.ConexionBD;
 
 import java.sql.*;
 import java.time.LocalDate;
@@ -41,6 +40,13 @@ public class VueloDAOImpl implements VueloDAO {
             numeroPlazasLibres)
             values (?,?,?,?,?,?)
             """;
+
+    private static final String DESCONTAR_PLAZA = """
+        UPDATE vuelo
+        SET numeroPlazasLibres = numeroPlazasLibres - 1
+        WHERE codigoVuelo = ?
+        AND numeroPlazasLibres > 0
+        """;
 
     @Override
     public void crearTabla() throws SQLException {
@@ -128,4 +134,14 @@ public class VueloDAOImpl implements VueloDAO {
                 rs.getObject("fechaYHoraSalida", LocalDateTime.class),
                 rs.getInt("numeroPlazasLibres"));
     }
+
+    @Override
+    public boolean descontarPlaza(String codigoVuelo) throws SQLException {
+        try (Connection conexion = ConexionBD.obtenerConexion();
+             PreparedStatement ps = conexion.prepareStatement(DESCONTAR_PLAZA)) {
+            ps.setString(1, codigoVuelo);
+            return ps.executeUpdate() > 0;
+        }
+    }
+
 }

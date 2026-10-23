@@ -1,4 +1,4 @@
-package pruebamysql.actividad5.modelo.dao;
+package pruebamysql.actividad5.dao;
 
 import java.sql.SQLException;
 

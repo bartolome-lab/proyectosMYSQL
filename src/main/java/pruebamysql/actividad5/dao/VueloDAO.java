@@ -1,4 +1,4 @@
-package pruebamysql.actividad5.modelo.dao;
+package pruebamysql.actividad5.dao;
 
 import pruebamysql.actividad5.modelo.beans.Vuelo;
 
@@ -16,4 +16,7 @@ public interface VueloDAO {
     public List<Vuelo> buscarPorDestino(String ciudadDestino) throws SQLException;
 
     public void crearTabla() throws SQLException;
+
+    boolean descontarPlaza(String codigoVuelo) throws SQLException;
+
 }

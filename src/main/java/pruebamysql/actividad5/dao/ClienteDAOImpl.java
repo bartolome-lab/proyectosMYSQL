@@ -1,6 +1,4 @@
-package pruebamysql.actividad5.modelo.dao;
-
-import pruebamysql.actividad5.modelo.procesos.ConexionBD;
+package pruebamysql.actividad5.dao;
 
 import java.sql.*;
 

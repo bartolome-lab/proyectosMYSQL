@@ -1,4 +1,4 @@
-package pruebamysql.actividad5.modelo.procesos;
+package pruebamysql.actividad5.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
