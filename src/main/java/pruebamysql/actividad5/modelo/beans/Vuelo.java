@@ -73,10 +73,10 @@ public class Vuelo {
     @Override
     public String toString() {
         return "Código de vuelo: " + codigoVuelo
-                + ", ciudad de origen: " + ciudadOrigen
-                + ", ciudad de destino: " + ciudadDestino
-                + ", fecha y hora de salida: " + fechaYHoraSalida
-                + ", fecha y hora de llegada: " + fechaYHoraLlegada
-                + ", número de plazas libres: " + numeroPlazasLibres;
+                + "\nciudad de origen: " + ciudadOrigen
+                + "\nciudad de destino: " + ciudadDestino
+                + "\nfecha y hora de salida: " + fechaYHoraSalida
+                + "\nfecha y hora de llegada: " + fechaYHoraLlegada
+                + "\nnúmero de plazas libres: " + numeroPlazasLibres;
     }
 }

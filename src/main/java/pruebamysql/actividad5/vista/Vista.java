@@ -12,24 +12,23 @@ public class Vista {
     private static final Scanner TECLADO = new Scanner(System.in);
 
     public int solicitarOpcionMenu() {
-        System.out.println("""
-                Seleccione una opción:
+        System.out.print("""
                 1 - Dar de alta un vuelo.
                 2 - Buscar vuelo.
                 3 - Reservar un vuelo.
-                4 - Listar todos los vuelos.
                 0 - Salir.
+                Seleccione una opción: 
                 """);
         return Integer.parseInt(TECLADO.nextLine());
     }
 
     public int solicitarOpcionBusqueda() {
-        System.out.println("""
-                Seleccione cómo quiere buscar el vuelo:
+        System.out.print("""
                 1 - Fecha salida.
                 2 - Ciudad de origen.
                 3 - Ciudad de destino.
                 0 - Volver.
+                Seleccione cómo quiere buscar el vuelo: 
                 """);
         return Integer.parseInt(TECLADO.nextLine());
     }

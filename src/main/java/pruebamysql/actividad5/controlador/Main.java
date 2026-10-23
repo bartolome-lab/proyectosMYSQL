@@ -1,9 +1,11 @@
 package pruebamysql.actividad5.controlador;
 
 import pruebamysql.actividad5.dao.*;
+import pruebamysql.actividad5.modelo.beans.Vuelo;
 import pruebamysql.actividad5.vista.Vista;
 
 import java.sql.SQLException;
+import java.util.List;
 
 public class Main {
     private static final Vista VISTA = new Vista();
